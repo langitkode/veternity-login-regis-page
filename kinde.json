@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "design": {
+    "srcDir": "kindeSrc"
+  },
+  "theme": {
+    "global_styles": "./kindeSrc/global.css"
+  }
+}

@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
+:root {
+  --kinde-heading-font-family: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --kinde-base-font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --kinde-base-color: #ffffff;
+  --kinde-button-primary-background-color: #a855f7; 
+  --kinde-button-primary-color: #ffffff;
+  --kinde-button-primary-border-radius: 14px;
+  --kinde-button-primary-font-weight: 600;
+
+  --kinde-button-secondary-background-color: #ffffff;
+  --kinde-button-secondary-color: #0f172a; /* Slate-900 */
+  --kinde-button-secondary-border-radius: 14px;
+}
+
+/* Kotak Input Email */
+.kinde-input {
+  background-color: rgba(15, 23, 42, 0.6) !important; /* Slate-900 dengan opacity 60% */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Border tipis transparan */
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 0.85rem 1rem !important;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efek ketika pengguna mengklik/fokus pada kolom Input Email */
+.kinde-input:focus {
+  border-color: #c084fc !important; /* Ungu terang (Tailwind purple-400) */
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.3) !important; /* Efek glowing ungu halus */
+  outline: none !important;
+}
+
+/* Label teks di atas input (Tulisan "Alamat Email") */
+.kinde-label {
+  color: #cbd5e1 !important; /* Slate-300 */
+  font-size: 0.875rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block;
+}
+
+/* Pembatas "atau" (Separator antara tombol Google dan Form Email) */
+.kinde-separator {
+  color: #94a3b8 !important; /* Slate-400 */
+  font-size: 0.85rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Link di bagian bawah (Tulisan "Daftar" atau "Masuk") */
+.kinde-control-link {
+  color: #c084fc !important; /* Pink/Ungu muda agar kontras di background gelap */
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.kinde-control-link:hover {
+  color: #a855f7 !important;
+  text-decoration: underline !important;
+}
+
+/* Mengatur jarak antar baris form bawaan Kinde agar tidak terlalu rapat */
+.kinde-form-row {
+  margin-bottom: 1.25rem !important;
+}
