@@ -4,9 +4,15 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "vite build --ssr kindeSrc/enviroment/pages/(kinde)/(login)/page.tsx"
+  },
   "devDependencies": {
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.2.3",
-    "typescript": "^5.7.3"
+    "@vitejs/plugin-react": "^6.0.3",
+    "typescript": "^5.7.3",
+    "vite": "^8.1.0"
   }
 }

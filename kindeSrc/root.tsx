@@ -35,7 +35,7 @@ export const Root = ({
         <style>{getStyles()}</style>
       </head>
 
-      <body>
+      <body className="kinde-root" style={{ margin: 0, padding: 0 }}>
         <div data-kinde-root="true">{children}</div>
       </body>
     </html>

@@ -17,18 +17,20 @@ const styles: {
   wrapper: {
     display: "flex",
     minHeight: "100vh",
-    width: "100vw",
+    width: "100%",
     background: "url(https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h) center / cover no-repeat",
   },
   container: {
     display: "flex",
     flexDirection: "column",
-    width: "1024px",
+    width: "100%",
+    maxWidth: "1024px",
     minHeight: "100vh",
   },
   bodyRow: {
     display: "flex",
-    flexDirection: "row",      
+    flexDirection: "row",  
+    flexWrap: "wrap",    
     flex: 1,                  
     alignItems: "space-between",
     padding: "2rem",
