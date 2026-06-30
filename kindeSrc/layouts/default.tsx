@@ -18,13 +18,12 @@ const styles: {
     display: "flex",
     minHeight: "100vh",
     width: "100vw",
-    // Perbaikan sintaks background shorthand yang benar:
     background: "url(https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h) center / cover no-repeat",
   },
   container: {
     display: "flex",
     flexDirection: "column",
-    width: "100%",
+    width: "1024px",
     minHeight: "100vh",
   },
   bodyRow: {
