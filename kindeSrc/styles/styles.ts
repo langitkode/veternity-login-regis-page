@@ -15,7 +15,7 @@ export const getStyles = (): string =>
     }
     [data-layout-row] { margin-top: 10rem; }
     [data-layout-image-wrapper] { display: none; padding-top: 0; display: none !important; }
-    [data-layout-content] { margin: 2rem; height: calc(100vh - 4rem) !important; }
+    [data-layout-content] { margin: 2rem; height: calc(100vh - 4rem) !important; max-height: calc(100vh - 4rem);}
     [theme-content] { font-family: var(--kinde-base-font-family); color: var(--kinde-base-color); font-size: 14px; line-height: 1.5; }
     [data-footer] { font-family: var(--kinde-base-font-family); color: var(--kinde-shared-color-text-label); font-size: 14px; line-height: 1.5; }
     [data-layout-content]::-webkit-scrollbar { display: none;}

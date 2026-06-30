@@ -53,6 +53,7 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+    height: "100%",
     flex: 1,
     overflow: "hidden",         /* Kunci baris agar tidak bocor di HP */
   },
@@ -75,6 +76,7 @@ const styles: Record<string, React.CSSProperties> = {
     boxSizing: "border-box",
     overflowY: "auto",             
     scrollbarWidth: "none",   
+    border: "1px solid rgba(255, 255, 255, 0.1)",
   },
 };
 
