@@ -1,7 +1,5 @@
 import { createServer as createViteDevServer } from "vite";
 import http from "http";
-import fs from "fs";
-import path from "path";
 
 async function start() {
   const vite = await createViteDevServer({
@@ -50,16 +48,11 @@ async function start() {
           },
         };
 
-        const html = await mod.default(mockEvent);
-
-        const cssPath = path.resolve("kindeSrc/styles/tailwind.css");
-        const css = fs.readFileSync(cssPath, "utf-8");
-        const injectedHtml = html.replace("</head>", `<style>${css}</style></head>`);
-
-        const transformedHtml = await vite.transformIndexHtml(url, injectedHtml);
+        let html = await mod.default(mockEvent);
+        html = await vite.transformIndexHtml(url, html);
 
         res.writeHead(200, { "Content-Type": "text/html" });
-        res.end("<!DOCTYPE html>\n" + transformedHtml);
+        res.end("<!DOCTYPE html>\n" + html);
       } catch (e) {
         vite.ssrFixStacktrace(e);
         console.error(e);
@@ -72,7 +65,7 @@ async function start() {
   const port = process.env.PORT || 5173;
   server.on("error", (err) => {
     if (err.code === "EADDRINUSE") {
-      console.error(`Port ${port} is already in use. Kill the existing process or use a different port.`);
+      console.error(`Port ${port} is already in use.`);
     } else {
       console.error("Server error:", err);
     }

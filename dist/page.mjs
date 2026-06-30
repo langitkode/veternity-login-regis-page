@@ -4,20 +4,73 @@ import "react";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server.browser";
 //#region kindeSrc/components/widget.tsx
+var styles$2 = {
+	article: {
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		width: "90%",
+		minWidth: 0,
+		boxSizing: "border-box",
+		padding: "1.5rem",
+		backgroundColor: "rgba(255, 255, 255, 0.05)",
+		backdropFilter: "blur(12px)",
+		WebkitBackdropFilter: "blur(12px)",
+		borderRadius: "0.5rem",
+		border: "1px solid rgba(255, 255, 255, 0.1)"
+	},
+	main: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		width: "100%",
+		boxSizing: "border-box",
+		padding: "1.5rem"
+	},
+	container: {
+		width: "100%",
+		minWidth: "2rem",
+		marginInline: "auto",
+		maxWidth: "400px"
+	},
+	heading: {
+		width: "100%",
+		textAlign: "center",
+		fontSize: "1.5rem",
+		lineHeight: "2rem",
+		fontWeight: 400,
+		letterSpacing: "-0.02em",
+		marginBottom: "1.5rem",
+		fontFamily: "Sora, sans-serif",
+		overflowWrap: "break-word",
+		wordBreak: "break-word"
+	},
+	description: {
+		width: "auto",
+		textAlign: "center",
+		fontSize: "1rem",
+		fontWeight: 300,
+		lineHeight: 1.625,
+		marginBottom: "3rem",
+		fontFamily: "\"Plus Jakarta Sans\", sans-serif",
+		overflowWrap: "break-word",
+		wordBreak: "break-word"
+	}
+};
 var Widget = ({ heading, description }) => {
 	return /* @__PURE__ */ jsx("article", {
-		className: "widget-article",
+		style: styles$2.article,
 		children: /* @__PURE__ */ jsx("main", {
-			className: "widget-main",
+			style: styles$2.main,
 			children: /* @__PURE__ */ jsxs("div", {
-				className: "widget-container",
+				style: styles$2.container,
 				children: [
 					/* @__PURE__ */ jsx("h1", {
-						className: "widget-heading",
+						style: styles$2.heading,
 						children: heading
 					}),
 					/* @__PURE__ */ jsx("p", {
-						className: "widget-description",
+						style: styles$2.description,
 						children: description
 					}),
 					getKindeWidget()
@@ -28,20 +81,36 @@ var Widget = ({ heading, description }) => {
 };
 //#endregion
 //#region kindeSrc/components/footer.tsx
+var styles$1 = {
+	container: {
+		textAlign: "center",
+		marginTop: "1.5rem",
+		fontSize: "0.8rem",
+		padding: "2rem",
+		color: "#E1E2EB"
+	},
+	links: {
+		display: "flex",
+		justifyContent: "center",
+		marginTop: "0.5rem",
+		gap: "0.5rem"
+	},
+	link: { fontWeight: 500 }
+};
 var Footer = () => {
 	return /* @__PURE__ */ jsxs("div", {
-		className: "footer",
+		style: styles$1.container,
 		children: [/* @__PURE__ */ jsx("p", { children: "By continuing, you agree to our policies" }), /* @__PURE__ */ jsxs("div", {
-			className: "footer-links",
+			style: styles$1.links,
 			children: [
 				/* @__PURE__ */ jsx("a", {
-					className: "footer-link",
+					style: styles$1.link,
 					href: "#",
 					children: "Privacy Policy"
 				}),
 				"·",
 				/* @__PURE__ */ jsx("a", {
-					className: "footer-link",
+					style: styles$1.link,
 					href: "#",
 					children: "Terms of Service"
 				})
@@ -51,22 +120,68 @@ var Footer = () => {
 };
 //#endregion
 //#region kindeSrc/layouts/default.tsx
+var styles = {
+	section: {
+		display: "flex",
+		width: "100%",
+		minHeight: "100vh",
+		backgroundImage: "url('https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h')",
+		backgroundSize: "cover",
+		backgroundPosition: "center",
+		backgroundRepeat: "no-repeat",
+		overflowX: "hidden"
+	},
+	main: {
+		display: "flex",
+		flexDirection: "column",
+		width: "100%",
+		minHeight: "100%",
+		justifyContent: "space-between",
+		marginInline: "auto",
+		color: "#E1E2EB"
+	},
+	row: {
+		display: "grid",
+		gridTemplateColumns: "3fr 2fr",
+		justifyContent: "center",
+		alignItems: "center"
+	},
+	imageWrapper: {
+		justifyContent: "center",
+		alignItems: "center"
+	},
+	image: {
+		width: "100%",
+		height: "auto"
+	},
+	content: {
+		display: "flex",
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+		padding: "0 1.5rem"
+	}
+};
 var DefaultLayout = ({ children }) => /* @__PURE__ */ jsx("section", {
-	className: "layout-section",
+	style: styles.section,
 	children: /* @__PURE__ */ jsxs("main", {
-		className: "layout-main",
+		"data-layout-main": true,
+		style: styles.main,
 		id: "main",
 		children: [/* @__PURE__ */ jsxs("div", {
-			className: "layout-row",
+			"data-layout-row": true,
+			style: styles.row,
 			children: [/* @__PURE__ */ jsx("div", {
-				className: "layout-image-wrapper",
+				"data-layout-image-wrapper": true,
+				style: styles.imageWrapper,
 				children: /* @__PURE__ */ jsx("img", {
 					src: "https://lh3.googleusercontent.com/d/1A17sCx42_kMubJ4_S0AxlPTEefSBTxgV",
-					className: "layout-image",
+					style: styles.image,
 					alt: "Icon"
 				})
 			}), /* @__PURE__ */ jsx("div", {
-				className: "layout-content",
+				"data-layout-content": true,
+				style: styles.content,
 				children
 			})]
 		}), /* @__PURE__ */ jsx(Footer, {})]
@@ -84,9 +199,24 @@ var getStyles = () => `@import url('https://fonts.googleapis.com/css2?family=Plu
       --kinde-button-primary-border-radius: 14px;
       --kinde-button-primary-font-weight: 600;
       --kinde-button-secondary-background-color: #ffffff;
-      --kinde-button-secondary-color: #0f172a; /* Slate-900 */
+      --kinde-button-secondary-color: #0f172a;
       --kinde-button-secondary-border-radius: 14px;
-    }`;
+    }
+    [data-layout-row] { margin-top: 10rem; }
+    [data-layout-image-wrapper] { display: none; padding-top: 0; }
+    @media (min-width: 768px) {
+      [data-layout-main] { max-width: 500px; }
+      [data-layout-image-wrapper] { display: flex; flex: 2; padding-top: 5rem; }
+      [data-layout-row] { margin-top: 0; }
+      [data-layout-content] { width: 300px; box-sizing: border-box; }
+    }
+    @media (min-width: 1024px) {
+      [data-layout-main] { max-width: 1024px; }
+      [data-layout-row] { flex-direction: row; gap: 4rem; }
+      [data-layout-image-wrapper] { padding-top: 12.5rem; }
+    }
+      
+    `;
 //#endregion
 //#region kindeSrc/root.tsx
 var Root = ({ children, context, request }) => {
