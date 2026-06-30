@@ -8,37 +8,44 @@ type DefaultLayoutProps = {
 };
 
 const styles: {
-  container: React.CSSProperties;
-  content: React.CSSProperties;
-  icon: React.CSSProperties;
   wrapper: React.CSSProperties;
+  container: React.CSSProperties;
+  bodyRow: React.CSSProperties;
+  iconColumn: React.CSSProperties;
+  contentColumn: React.CSSProperties;
 } = {
   wrapper: {
     display: "flex",
     minHeight: "100vh",
-    minWidth: "100vw",
-    background:
-      "url(https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h) cover no-repeat",
+    width: "100vw",
+    // Perbaikan sintaks background shorthand yang benar:
+    background: "url(https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h) center / cover no-repeat",
   },
   container: {
-    height: "100vh",
     display: "flex",
-    justifyContent: "center",
     flexDirection: "column",
-  },
-  content: {
-    display: "flex",
     width: "100%",
-    flex: 1,
-    justifyContent: "end",
+    minHeight: "100vh",
+  },
+  bodyRow: {
+    display: "flex",
+    flexDirection: "row",      
+    flex: 1,                  
     alignItems: "center",
     padding: "2rem",
+    gap: "2rem",
   },
-  icon: {
+  iconColumn: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flex: 2,
+    flex: 2,                   
+  },
+  contentColumn: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,                  
   },
 };
 
@@ -47,9 +54,17 @@ export const DefaultLayout = ({
 }: DefaultLayoutProps): React.JSX.Element => (
   <section style={styles.wrapper}>
     <main style={styles.container} id="main">
-      <div>
-        <div style={styles.icon}><img src="https://lh3.googleusercontent.com/d/1A17sCx42_kMubJ4_S0AxlPTEefSBTxgV" width={500} alt="Icon" /></div>
-        <div style={styles.content}>{children}</div>
+      <div style={styles.bodyRow}>
+        <div style={styles.iconColumn}>
+          <img 
+            src="https://lh3.googleusercontent.com/d/1A17sCx42_kMubJ4_S0AxlPTEefSBTxgV" 
+            style={{ maxWidth: "100%", height: "auto" }} /* Biar gambar responsif tidak pecah */
+            alt="Icon" 
+          />
+        </div>
+        <div style={styles.contentColumn}>
+          {children}
+        </div>
       </div>
       <Footer />
     </main>
