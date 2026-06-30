@@ -23,9 +23,7 @@ var styles$2 = {
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
-		width: "100%",
-		boxSizing: "border-box",
-		padding: "1.5rem"
+		width: "100%"
 	},
 	container: {
 		width: "100%",
@@ -156,10 +154,10 @@ var styles = {
 	},
 	content: {
 		display: "flex",
-		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
-		padding: "0 1.5rem"
+		padding: "0 1.5rem",
+		margin: "2rem"
 	}
 };
 var DefaultLayout = ({ children }) => /* @__PURE__ */ jsx("section", {
@@ -211,8 +209,9 @@ var getStyles = () => `@import url('https://fonts.googleapis.com/css2?family=Plu
       [data-layout-content] { width: 300px; box-sizing: border-box; }
     }
     @media (min-width: 1024px) {
-      [data-layout-main] { max-width: 1024px; }
-      [data-layout-row] { flex-direction: row; gap: 4rem; }
+      [data-layout-main] { max-width: 900px; }
+      [data-layout-content] { width: auto; }
+      [data-layout-row] { gap: 4rem; }
       [data-layout-image-wrapper] { padding-top: 12.5rem; }
     }
       
