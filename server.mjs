@@ -21,8 +21,8 @@ async function start() {
     try {
       const isRegister = url.includes("register");
       const pagePath = isRegister
-        ? "./kindeSrc/enviroment/pages/(kinde)/(register)/page.tsx"
-        : "./kindeSrc/enviroment/pages/(kinde)/(login)/page.tsx";
+        ? "./kindeSrc/environment/pages/(kinde)/(register)/page.tsx"
+        : "./kindeSrc/environment/pages/(kinde)/(login)/page.tsx";
 
       const mod = await vite.ssrLoadModule(pagePath);
 
