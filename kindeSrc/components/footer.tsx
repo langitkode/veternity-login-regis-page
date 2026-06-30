@@ -4,14 +4,14 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="text-center mt-6 text-[0.8rem] p-8">
+    <div className="text-center mt-6 text-[0.8rem] p-8 text-[#E1E2EB]">
       <p>By continuing, you agree to our policies</p>
       <div className="flex justify-center mt-2 gap-2">
-        <a className="text-[#184027] font-medium" href="#">
+        <a className="font-medium" href="#">
           Privacy Policy
         </a>
         ·
-        <a className="text-[#184027] font-medium" href="#">
+        <a className="font-medium" href="#">
           Terms of Service
         </a>
       </div>
