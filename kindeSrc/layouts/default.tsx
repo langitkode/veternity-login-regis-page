@@ -9,7 +9,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     minHeight: "100vh",
     backgroundImage:
-      "url('https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h')",
+      "url('https://lh3.googleusercontent.com/d/11OS3x7vFSp1rFAoNpUZ7lPKcn9XFxyM0')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -58,7 +58,7 @@ export const DefaultLayout = ({
       <div data-layout-row style={styles.row}>
         <div data-layout-image-wrapper style={styles.imageWrapper}>
           <img
-            src="https://lh3.googleusercontent.com/d/1A17sCx42_kMubJ4_S0AxlPTEefSBTxgV"
+            src="https://lh3.googleusercontent.com/d/19vhpFaGMNIDJnLrWxM56lHaHmpjJu-bu"
             style={styles.image}
             alt="Icon"
           />
