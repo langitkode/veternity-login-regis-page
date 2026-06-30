@@ -30,7 +30,7 @@ const styles: {
     display: "flex",
     flexDirection: "row",      
     flex: 1,                  
-    alignItems: "center",
+    alignItems: "space-between",
     padding: "2rem",
     gap: "2rem",
   },
