@@ -6,7 +6,7 @@
   },
   "scripts": {
     "dev": "node server.mjs",
-    "build": "vite build --ssr \"kindeSrc/enviroment/pages/(kinde)/(login)/page.tsx\""
+    "build": "vite build --ssr \"kindeSrc/environment/pages/(kinde)/(login)/page.tsx\""
   },
   "devDependencies": {
     "@types/react": "^19.0.12",

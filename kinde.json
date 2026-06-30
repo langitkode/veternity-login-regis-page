@@ -3,7 +3,5 @@
   "design": {
     "srcDir": "kindeSrc"
   },
-  "theme": {
-   "global_styles": "./kindeSrc/styles/global.css"
-  }
+  "theme": {}
 }
