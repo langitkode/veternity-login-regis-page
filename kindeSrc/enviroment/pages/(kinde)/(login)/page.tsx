@@ -13,11 +13,11 @@ export const Widget: React.FC<WidgetProps> = ({ heading }) => {
       <div className="w-full">
         
         {/* Judul dinamis dari Kinde (Default: "Daftar Akun" / "Masuk") */}
-        <h1 className="text-3xl font-bold tracking-tight text-center mb-2 text-white">
-          {heading || "Daftar Akun"}
+        <h1 className="text-3xl font-bold tracking-tight text-center mb-2 text-[#E1E2EB]">
+          {heading || "Login"}
         </h1>
         
-        <p className="text-sm text-slate-400 text-center mb-8">
+        <p className="text-sm text-[#C3C6D0] text-center mb-8">
           Masuk ke ekosistem kami yang aman dan modern.
         </p>
 

@@ -50,14 +50,14 @@
 
 /* Link di bagian bawah (Tulisan "Daftar" atau "Masuk") */
 .kinde-control-link {
-  color: #c084fc !important; /* Pink/Ungu muda agar kontras di background gelap */
+  color: #A04992 !important; /* Pink/Ungu muda agar kontras di background gelap */
   text-decoration: none !important;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .kinde-control-link:hover {
-  color: #a855f7 !important;
+  color: #A1C9FF !important;
   text-decoration: underline !important;
 }
 

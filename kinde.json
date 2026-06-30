@@ -4,6 +4,6 @@
     "srcDir": "kindeSrc"
   },
   "theme": {
-    "global_styles": "./kindeSrc/global.css"
+   "global_styles": "./kindeSrc/styles/global.css"
   }
 }

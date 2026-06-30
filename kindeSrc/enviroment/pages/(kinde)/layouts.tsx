@@ -13,14 +13,14 @@ export default async function Layout({ children }: { children: React.ReactNode }
       </head>
       <body>
         <article 
-          className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-950 bg-cover bg-center bg-no-repeat px-6 py-12 md:flex-row md:justify-around text-white"
+          className="flex min-h-screen w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-6 py-12 md:flex-row md:justify-around text-white"
           style={{ backgroundImage: `url('${background}')` }}
         >
           <div className="flex flex-1 max-w-xl items-center justify-center p-4 mb-8 md:mb-0">
             <img 
               src={logo} 
               alt="Veternity Beraksi Logo" 
-              className="w-full max-w-md h-auto object-contain drop-shadow-[0_0_35px_rgba(168,85,247,0.6)]" 
+              className="w-full max-w-2xl h-auto object-contain drop-shadow-[0_0_35px_rgba(168,85,247,0.6)]" 
             />
           </div>
 
