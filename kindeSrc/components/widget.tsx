@@ -8,7 +8,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "90%",
+    width: "100%",
     minWidth: 0,
     boxSizing: "border-box",
     padding: "1.5rem",
@@ -29,6 +29,7 @@ const styles: Record<string, React.CSSProperties> = {
     minWidth: "2rem",
     marginInline: "auto",
     maxWidth: "400px",
+    color: "E1E2EB",
   },
   heading: {
     width: "100%",
@@ -38,6 +39,7 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 400,
     letterSpacing: "-0.02em",
     marginBottom: "1.5rem",
+    marginTop: "1.5rem",
     fontFamily: "Sora, sans-serif",
     overflowWrap: "break-word",
     wordBreak: "break-word",
@@ -67,7 +69,7 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
         <div style={styles.container}>
           <h1 style={styles.heading}>{heading}</h1>
           <p style={styles.description}>{description}</p>
-          {getKindeWidget()}
+          <div theme-content>{getKindeWidget()}</div>
         </div>
       </main>
     </article>

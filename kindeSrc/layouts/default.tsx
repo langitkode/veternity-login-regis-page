@@ -42,8 +42,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "0 1.5rem",
-    margin: "2rem",
+    height: "calc(100vh - 4rem)",
   },
 };
 
@@ -72,3 +71,7 @@ export const DefaultLayout = ({
     </main>
   </section>
 );
+function calc(arg0: number, arg1: number, rem: any): import("csstype").Property.Height<string | number> | undefined {
+  throw new Error("Function not implemented.");
+}
+
