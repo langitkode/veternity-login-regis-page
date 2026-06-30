@@ -1,7 +1,4 @@
 {
-  "version": "1",
-  "design": {
-    "srcDir": "kindeSrc"
-  },
-  "theme": {}
+  "version": "2024-12-09",
+  "rootDir": "kindeSrc"
 }

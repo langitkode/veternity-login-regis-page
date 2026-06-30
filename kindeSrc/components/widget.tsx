@@ -1,6 +1,6 @@
 "use server";
 
-import { getKindeWidget, getLogoUrl } from "@kinde/infrastructure";
+import { getKindeWidget } from "@kinde/infrastructure";
 import React from "react";
 
 type WidgetProps = {
@@ -8,53 +8,17 @@ type WidgetProps = {
   description: string;
 };
 
-const styles: {
-  widgetWrapper: React.CSSProperties;
-  heading: React.CSSProperties;
-  description: React.CSSProperties;
-  loginForm: React.CSSProperties;
-  loginFormWrapper: React.CSSProperties;
-} = {
-  widgetWrapper: {
-    display: "flex",
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  loginForm: {
-    maxWidth: "400px",
-    width: "100%",
-    margin: "0 auto",
-    minInlineSize: "2rem",
-  },
-  loginFormWrapper: {
-    display: "flex",
-    padding: "2rem",
-    flexDirection: "column",
-    justifyContent: "center",
-    flex: 1,
-  },
-  heading: {
-    fontSize: "32px",
-    fontWeight: 400,
-    letterSpacing: "-0.02em",
-    marginBottom: "1.5rem",
-  },
-  description: {
-    fontSize: "16px",
-    fontWeight: 300,
-    lineHeight: "1.5",
-    marginBottom: "2rem",
-  },
-};
-
 export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
   return (
-    <article style={styles.widgetWrapper}>
-      <main style={styles.loginFormWrapper}>
-        <div style={styles.loginForm}>
-          <h1 style={styles.heading}>{heading}</h1>
-          <p style={styles.description}>{description}</p>
+    <article className="flex flex-1 justify-center items-center">
+      <main className="flex flex-col justify-center flex-1 p-6 md:p-8">
+        <div className="w-full min-w-[2rem] mx-auto max-w-[400px]">
+          <h1 className="text-2xl md:text-[32px] font-normal tracking-[-0.02em] mb-6 font-[Sora] w-full text-center">
+            {heading}
+          </h1>
+          <p className="text-base font-light leading-relaxed mb-12 font-[PlusJakartaSans] w-full text-center">
+            {description}
+          </p>
           {getKindeWidget()}
         </div>
       </main>

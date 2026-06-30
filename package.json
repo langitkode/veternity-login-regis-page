@@ -1,8 +1,11 @@
 {
   "dependencies": {
     "@kinde/infrastructure": "^0.2.2",
+    "@tailwindcss/postcss": "^4.3.2",
+    "@tailwindcss/vite": "^4.3.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.3.2"
   },
   "scripts": {
     "dev": "node server.mjs",

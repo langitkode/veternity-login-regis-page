@@ -2,39 +2,16 @@
 
 import React from "react";
 
-const styles: {
-  policies: React.CSSProperties;
-  links: React.CSSProperties;
-  link: React.CSSProperties;
-} = {
-  policies: {
-    textAlign: "center",
-    marginTop: "1.5rem",
-    fontSize: "0.8rem",
-    padding: "2rem",
-  },
-  links: {
-    display: "flex",
-    justifyContent: "center",
-    marginTop: "0.5rem",
-    gap: "0.5rem",
-  },
-  link: {
-    color: "#184027",
-    fontWeight: 500,
-  },
-};
-
 export const Footer = () => {
   return (
-    <div style={styles.policies}>
+    <div className="text-center mt-6 text-[0.8rem] p-8">
       <p>By continuing, you agree to our policies</p>
-      <div style={styles.links}>
-        <a style={styles.link} href="#">
+      <div className="flex justify-center mt-2 gap-2">
+        <a className="text-[#184027] font-medium" href="#">
           Privacy Policy
         </a>
         ·
-        <a style={styles.link} href="#">
+        <a className="text-[#184027] font-medium" href="#">
           Terms of Service
         </a>
       </div>

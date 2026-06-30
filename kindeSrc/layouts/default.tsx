@@ -7,63 +7,20 @@ type DefaultLayoutProps = {
   children: React.ReactNode;
 };
 
-const styles: {
-  wrapper: React.CSSProperties;
-  container: React.CSSProperties;
-  bodyRow: React.CSSProperties;
-  iconColumn: React.CSSProperties;
-  contentColumn: React.CSSProperties;
-} = {
-  wrapper: {
-    display: "flex",
-    minHeight: "100vh",
-    width: "100%",
-    background: "url(https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h) center / cover no-repeat",
-  },
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    width: "100%",
-    maxWidth: "1024px",
-    minHeight: "100vh",
-  },
-  bodyRow: {
-    display: "flex",
-    flexDirection: "row",  
-    flexWrap: "wrap",    
-    flex: 1,                  
-    alignItems: "space-between",
-    padding: "2rem",
-    gap: "2rem",
-  },
-  iconColumn: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 2,                   
-  },
-  contentColumn: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,                  
-  },
-};
-
 export const DefaultLayout = ({
   children,
 }: DefaultLayoutProps): React.JSX.Element => (
-  <section style={styles.wrapper}>
-    <main style={styles.container} id="main">
-      <div style={styles.bodyRow}>
-        <div style={styles.iconColumn}>
+  <section className="flex w-full min-h-screen bg-[url('https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h')] bg-cover bg-center bg-no-repeat">
+    <main className="flex flex-col w-full md:max-w-[500px] lg:max-w-[1024px] min-h-screen mx-auto text-[#E1E2EB]" id="main">
+      <div className="flex flex-1 flex-col lg:flex-row lg:gap-16 justify-center items-center">
+        <div className="hidden md:flex md:flex-[2] justify-center items-center pt-0 md:pt-20 lg:pt-50">
           <img 
             src="https://lh3.googleusercontent.com/d/1A17sCx42_kMubJ4_S0AxlPTEefSBTxgV" 
-            style={{ maxWidth: "100%", height: "auto" }} /* Biar gambar responsif tidak pecah */
+            className="w-full h-auto"
             alt="Icon" 
           />
         </div>
-        <div style={styles.contentColumn}>
+        <div className="flex flex-1 justify-center items-center bg-white/5 backdrop-blur-md rounded-lg p-6 border-1 border-white/10 justify-center items-center">
           {children}
         </div>
       </div>

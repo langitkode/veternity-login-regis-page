@@ -1,11 +1,33 @@
 import { createServer as createViteDevServer } from "vite";
 import http from "http";
+import fs from "fs";
+import path from "path";
+import postcss from "postcss";
+import tailwindcss from "@tailwindcss/postcss";
+
+let tailwindCSS = "";
+
+async function generateTailwindCSS() {
+  try {
+    const cssPath = path.resolve("kindeSrc/styles/tailwind.css");
+    const source = fs.readFileSync(cssPath, "utf-8");
+    const result = await postcss([tailwindcss()]).process(source, {
+      from: cssPath,
+    });
+    tailwindCSS = result.css;
+    console.log("Tailwind CSS processed successfully");
+  } catch (e) {
+    console.error("Tailwind CSS generation failed:", e);
+  }
+}
 
 async function start() {
   const vite = await createViteDevServer({
     server: { middlewareMode: true, hmr: false },
     appType: "custom",
   });
+
+  await generateTailwindCSS();
 
   const server = http.createServer(async (req, res) => {
     const url = req.url || "/";
@@ -56,9 +78,12 @@ async function start() {
       };
 
       const html = await mod.default(mockEvent);
+      const injectedHtml = tailwindCSS
+        ? html.replace("</head>", `<style>${tailwindCSS}</style></head>`)
+        : html;
 
       res.writeHead(200, { "Content-Type": "text/html" });
-      res.end("<!DOCTYPE html>\n" + html);
+      res.end("<!DOCTYPE html>\n" + injectedHtml);
     } catch (e) {
       vite.ssrFixStacktrace(e);
       console.error(e);
