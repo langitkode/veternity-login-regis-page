@@ -4,35 +4,62 @@ import React from "react";
 import { Footer } from "../components/footer";
 
 const styles: Record<string, React.CSSProperties> = {
+  // 1. KUNCI PANGGUNG UTAMA SELAYAR PENUH
   section: {
     display: "flex",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: "100vw",
+    height: "100vh",
+    overflow: "hidden",        /* Sembunyikan scroll global agar background mati total */
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  // 2. ATURAN GAMBAR LATAR BELAKANG MINIMAL UKURAN TABLET
+  backgroundFixed: {
+    position: "absolute",
+    top: 0,
+    left: "50%",
+    transform: "translateX(-50%)", /* Memastikan gambar tetap berada di tengah layar */
     width: "100%",
-    minHeight: "100vh",
-    backgroundImage:
-      "url('https://lh3.googleusercontent.com/d/11OS3x7vFSp1rFAoNpUZ7lPKcn9XFxyM0')",
-    backgroundSize: "cover",
+    minWidth: "900px",          /* SOLUSI: Ukuran terkecil gambar adalah ukuran tablet */
+    height: "100%",
+    backgroundImage: "url('https://lh3.googleusercontent.com/d/11OS3x7vFSp1rFAoNpUZ7lPKcn9XFxyM0')",
+    backgroundSize: "cover",    /* Otomatis membesar menyesuaikan jika layar lebih lebar */
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    overflowX: "hidden",
+    zIndex: -1,                 /* Berada di balik form */
   },
   main: {
     display: "flex",
+    position: "relative",
     flexDirection: "column",
     width: "100%",
-    minHeight: "100%",
+    height: "100%",
+    maxHeight: "100vh",
     justifyContent: "space-between",
     marginInline: "auto",
     color: "#E1E2EB",
+    border: "1px solid #E1E2EB",
+    boxSizing: "border-box",
   },
   row: {
-    display: "grid",
-    gridTemplateColumns: "3fr 2fr",
+    display: "flex",     
+    position: "relative",      
+    flexDirection: "column",   
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    flex: 1,
+    overflow: "hidden",         /* Kunci baris agar tidak bocor di HP */
   },
   imageWrapper: {
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
   },
   image: {
     width: "100%",
@@ -41,8 +68,13 @@ const styles: Record<string, React.CSSProperties> = {
   content: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
-    height: "calc(100vh - 4rem)",
+    alignItems: "center",  
+    width: "100%",         
+    height: "100%",    
+    padding: "1.5rem",
+    boxSizing: "border-box",
+    overflowY: "auto",             
+    scrollbarWidth: "none",   
   },
 };
 
@@ -52,26 +84,29 @@ type DefaultLayoutProps = {
 
 export const DefaultLayout = ({
   children,
-}: DefaultLayoutProps): React.JSX.Element => (
-  <section style={styles.section}>
-    <main data-layout-main style={styles.main} id="main">
-      <div data-layout-row style={styles.row}>
-        <div data-layout-image-wrapper style={styles.imageWrapper}>
-          <img
-            src="https://lh3.googleusercontent.com/d/19vhpFaGMNIDJnLrWxM56lHaHmpjJu-bu"
-            style={styles.image}
-            alt="Icon"
-          />
-        </div>
-        <div data-layout-content style={styles.content}>
-          {children}
-        </div>
-      </div>
-      <Footer />
-    </main>
-  </section>
-);
-function calc(arg0: number, arg1: number, rem: any): import("csstype").Property.Height<string | number> | undefined {
-  throw new Error("Function not implemented.");
-}
+}: DefaultLayoutProps): React.JSX.Element => {
+  return (
+    <>
+      <section style={styles.section}>
+        {/* Elemen Latar Belakang Mandiri dengan Skala Minimal Tablet */}
+        <div style={styles.backgroundFixed} />
 
+        <main data-layout-main style={styles.main} id="main">
+          <div data-layout-row style={styles.row}>
+            <div data-layout-image-wrapper style={styles.imageWrapper}>
+              <img
+                src="https://lh3.googleusercontent.com/d/19vhpFaGMNIDJnLrWxM56lHaHmpjJu-bu"
+                style={styles.image}
+                alt="Icon"
+              />
+            </div>
+            <div data-layout-content style={styles.content}>
+              {children}
+            </div>
+          </div>
+          <Footer data-footer />
+        </main>
+      </section>
+    </>
+  );
+};
