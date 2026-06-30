@@ -43,7 +43,6 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "space-between",
     marginInline: "auto",
     color: "#E1E2EB",
-    border: "1px solid #E1E2EB",
     boxSizing: "border-box",
   },
   row: {
@@ -76,7 +75,6 @@ const styles: Record<string, React.CSSProperties> = {
     boxSizing: "border-box",
     overflowY: "auto",             
     scrollbarWidth: "none",   
-    border: "1px solid rgba(255, 255, 255, 0.1)",
   },
 };
 
