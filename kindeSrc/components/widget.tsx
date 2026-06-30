@@ -16,7 +16,6 @@ const styles: Record<string, React.CSSProperties> = {
     backdropFilter: "blur(12px)",
     WebkitBackdropFilter: "blur(12px)",
     borderRadius: "0.5rem",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
   },
   main: {
     display: "flex",
