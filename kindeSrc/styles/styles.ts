@@ -1,16 +1,3 @@
-const kindeVariables = {
-  baseFontFamily:
-    "Instrument Sans, -apple-system, system-ui, BlinkMacSystemFont, Helvetica, Arial, Segoe UI, Roboto, sans-serif",
-  controlSelectTextBorderRadius: "1rem",
-  buttonPrimaryBackgroundColor: "#C1AFEF",
-  buttonPrimaryColor: "#f5f5f5",
-  buttonBorderRadius: "1rem",
-  buttonSecondaryBackgroundColor: "#2B2B2B",
-  buttonSecondaryBorderWidth: "1px",
-  buttonSecondaryBorderColor: "#2B2B2B",
-  buttonSecondaryBorderStyle: "solid",
-  buttonSecondaryBorderRadius: "1rem",
-} as const;
 
 export const getStyles = (): string =>
   `@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
