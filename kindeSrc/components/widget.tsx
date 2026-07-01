@@ -16,7 +16,7 @@ const styles: Record<string, React.CSSProperties> = {
     backgroundColor: "rgba(255, 255, 255, 0.05)",
     backdropFilter: "blur(12px)",
     WebkitBackdropFilter: "blur(12px)",
-    borderRadius: "0.5rem",
+    borderRadius: "1.5rem",
     maxWidth: "500px",      
   },
   main: {
