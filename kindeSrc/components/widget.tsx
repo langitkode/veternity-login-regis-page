@@ -17,6 +17,7 @@ const styles: Record<string, React.CSSProperties> = {
     backdropFilter: "blur(12px)",
     WebkitBackdropFilter: "blur(12px)",
     borderRadius: "0.5rem",
+    maxWidth: "500px",      
   },
   main: {
     display: "flex",
@@ -26,9 +27,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   container: {
     width: "100%",
-    minWidth: "calc(100% - 1rem)",
     marginInline: "auto",
-    maxWidth: "400px",
     color: "E1E2EB",
   },
   heading: {

@@ -10,7 +10,8 @@ var styles$2 = {
 		fontSize: "0.8rem",
 		color: "#E1E2EB",
 		fontFamily: "\"Plus Jakarta Sans\", sans-serif",
-		marginTop: "1rem"
+		marginTop: "1rem",
+		marginBottom: "3rem"
 	},
 	links: {
 		display: "flex",
@@ -68,7 +69,7 @@ var styles$1 = {
 	},
 	container: {
 		width: "100%",
-		minWidth: "2rem",
+		minWidth: "calc(100% - 1rem)",
 		marginInline: "auto",
 		maxWidth: "400px",
 		color: "E1E2EB"
@@ -102,8 +103,7 @@ var styles$1 = {
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",
-		width: "100%",
-		backgroundColor: "rgba(0, 0, 0, 0.5)"
+		width: "100%"
 	}
 };
 var Widget = ({ heading, description }) => {
@@ -197,6 +197,7 @@ var styles = {
 		display: "flex",
 		justifyContent: "start",
 		alignItems: "start",
+		width: "100%",
 		minWidth: "300px",
 		maxWidth: "500px",
 		height: "100%",
@@ -239,16 +240,20 @@ var getStyles = () => `@import url('https://fonts.googleapis.com/css2?family=Plu
     :root {
       --kinde-heading-font-family: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --kinde-base-font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --kinde-base-color: #ffffff;
+      --kinde-base-color: #E1E2EB;
       --kinde-button-primary-background-color: #a855f7; 
-      --kinde-button-primary-color: #ffffff;
+      --kinde-button-primary-color: #E1E2EB;
       --kinde-button-primary-border-radius: 14px;
       --kinde-button-primary-font-weight: 600;
-      --kinde-button-secondary-background-color: #ffffff;
+      --kinde-button-secondary-background-color: #E1E2EB;
       --kinde-button-secondary-color: #0f172a;
       --kinde-button-secondary-border-radius: 14px;
       --kinde-shared-color-text-label: #E1E2EB;
+      --kinde-choice-separator: #E1E2EB;
     }
+    [data-kinde-control-input] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-base-color) !important; font-size: 14px; line-height: 1.5; }
+    [data-kinde-choice-separator] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
+    [data-kinde-layout-widget-branding] { font-family: var(--kinde-base-font-family) !important; color: color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-root ] { margin: 0; padding: 0;}
     [data-layout-image-wrapper] { display: none; padding-top: 0; display: none !important; }
     [data-layout-content] { flex-shrink: 0; padding-top:10rem; overflow-y: auto; scrollbar-width: none; box-sizing: border-box; }
@@ -265,6 +270,10 @@ var getStyles = () => `@import url('https://fonts.googleapis.com/css2?family=Plu
     @media (min-width: 1024px) {
       [data-layout-main] { max-width: 900px; }
       [data-layout-content] { width: auto;}
+    }
+
+    p {
+      color: var(--kinde-base-color) !important;
     }
     `;
 //#endregion
