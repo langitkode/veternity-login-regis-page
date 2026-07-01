@@ -52,14 +52,15 @@ var styles$1 = {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
-		width: "100%",
-		minWidth: "300px",
+		width: "320px",
+		minWidth: "100%",
 		boxSizing: "border-box",
 		padding: "1.5rem",
 		backgroundColor: "rgba(255, 255, 255, 0.05)",
 		backdropFilter: "blur(12px)",
 		WebkitBackdropFilter: "blur(12px)",
-		borderRadius: "0.5rem"
+		borderRadius: "1.5rem",
+		maxWidth: "500px"
 	},
 	main: {
 		display: "flex",
@@ -69,9 +70,7 @@ var styles$1 = {
 	},
 	container: {
 		width: "100%",
-		minWidth: "calc(100% - 1rem)",
 		marginInline: "auto",
-		maxWidth: "400px",
 		color: "E1E2EB"
 	},
 	heading: {
@@ -147,8 +146,8 @@ var styles = {
 		width: "100vw",
 		justifyContent: "center",
 		alignItems: "center",
-		paddingLeft: "0.5rem",
-		paddingRight: "0.5rem"
+		paddingLeft: "10px",
+		paddingRight: "10px"
 	},
 	backgroundFixed: {
 		position: "absolute",
@@ -197,7 +196,6 @@ var styles = {
 		display: "flex",
 		justifyContent: "start",
 		alignItems: "start",
-		width: "100%",
 		minWidth: "300px",
 		maxWidth: "500px",
 		height: "100%",
