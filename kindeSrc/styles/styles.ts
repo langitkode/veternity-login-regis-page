@@ -33,11 +33,17 @@ export const getStyles = (): string =>
       [data-layout-main] { max-width: 900px; }
       [data-layout-content] { width: auto;}
     }
-    [data-kinde-button-variant] {
-      color: var(--kinde-base-color) !important;
+
+    li button, 
+    li [data-kinde-button-variant] {
+      background-color: var(--kinde-button-secondary-background-color) !important;
+      color: var(--kinde-button-primary-color) !important;
     }
-    .kinde-button {
-      color: var(--kinde-button-primary-background-color) !important;
+
+    form button, 
+    form [data-kinde-button-variant] {
+      background-color: var(--kinde-button-primary-color) !important; 
+      color: var(--kinde-button-secondary-background-color) !important;
     }
     p {
       color: var(--kinde-base-color) !important;
