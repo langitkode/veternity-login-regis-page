@@ -14,7 +14,7 @@ export const getStyles = (): string =>
       --kinde-shared-color-text-label: #E1E2EB;
     }
     [data-layout-image-wrapper] { display: none; padding-top: 0; display: none !important; }
-    [data-layout-content] { margin-top: 10rem; height: calc(100vh - 4rem) !important; max-height: calc(100vh - 4rem); flex-shrink: 0; }
+    [data-layout-content] { flex-shrink: 0; }
     [theme-content] { font-family: var(--kinde-base-font-family); color: var(--kinde-base-color); font-size: 14px; line-height: 1.5; }
     [data-footer] { font-family: var(--kinde-base-font-family); color: var(--kinde-shared-color-text-label); font-size: 14px; line-height: 1.5; }
     [data-layout-content]::-webkit-scrollbar { display: none;}
@@ -27,7 +27,7 @@ export const getStyles = (): string =>
     }
     @media (min-width: 1024px) {
       [data-layout-main] { max-width: 900px; }
-      [data-layout-content] { width: auto; padding-top: 10rem; !important;}
+      [data-layout-content] { width: auto; padding-top: 10rem !important;}
       [data-layout-row] { gap: 4rem; }
     }
     `;

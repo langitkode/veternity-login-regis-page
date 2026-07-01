@@ -72,10 +72,12 @@ const styles: Record<string, React.CSSProperties> = {
     minWidth: "300px", 
     maxWidth: "500px",        
     height: "100%",    
-    padding: "1.5rem",
     boxSizing: "border-box",
     overflowY: "auto",             
     scrollbarWidth: "none",   
+    paddingLeft:"1rem",
+    paddingRight:"1rem",
+    paddingTop:"20rem",
   },
 };
 
