@@ -33,6 +33,9 @@ export const getStyles = (): string =>
       [data-layout-main] { max-width: 900px; }
       [data-layout-content] { width: auto;}
     }
+    [data-kinde-button-variant] {
+      color: var(--kinde-base-color) !important;
+    }
     .kinde-button {
       color: var(--kinde-button-primary-background-color) !important;
     }
