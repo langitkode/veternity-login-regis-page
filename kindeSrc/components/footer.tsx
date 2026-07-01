@@ -5,10 +5,10 @@ import React from "react";
 const styles: Record<string, React.CSSProperties> = {
   container: {
     textAlign: "center",
-    marginTop: "1.5rem",
     fontSize: "0.8rem",
     padding: "2rem",
     color: "#E1E2EB",
+    fontFamily: '"Plus Jakarta Sans", sans-serif',
   },
   links: {
     display: "flex",
@@ -18,6 +18,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   link: {
     fontWeight: 500,
+    color: "inherit"
   },
 };
 
@@ -26,11 +27,11 @@ export const Footer = () => {
     <div style={styles.container}>
       <p>By continuing, you agree to our policies</p>
       <div style={styles.links}>
-        <a style={styles.link} href="#">
+        <a style={styles.link} href="https://docs.kinde.com/trust-center/privacy-and-compliance/privacy-policy/">
           Privacy Policy
         </a>
         ·
-        <a style={styles.link} href="#">
+        <a style={styles.link} href="#https://docs.kinde.com/trust-center/agreements/terms-of-service/">
           Terms of Service
         </a>
       </div>
