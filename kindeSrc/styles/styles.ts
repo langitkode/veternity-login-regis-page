@@ -14,8 +14,8 @@ export const getStyles = (): string =>
       --kinde-shared-color-text-label: #E1E2EB;
       --kinde-choice-separator: #E1E2EB;
     }
-    [data-kinde-choice-separator]: { font-family: var(--kinde-base-font-family); color: var(--kinde-choice-separator); font-size: 14px; line-height: 1.5; }
-    [data-kinde-layout-widget-branding]: { font-family: var(--kinde-base-font-family); color: color: var(--kinde-choice-separator); font-size: 14px; line-height: 1.5; }
+    [data-kinde-choice-separator]: { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
+    [data-kinde-layout-widget-branding]: { font-family: var(--kinde-base-font-family) !important; color: color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-root ] { margin: 0; padding: 0;}
     [data-layout-image-wrapper] { display: none; padding-top: 0; display: none !important; }
     [data-layout-content] { flex-shrink: 0; padding-top:10rem; overflow-y: auto; scrollbar-width: none; box-sizing: border-box; }
