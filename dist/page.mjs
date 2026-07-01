@@ -1,23 +1,64 @@
 "use server";
 import { getKindeCSRF, getKindeRequiredCSS, getKindeRequiredJS, getKindeWidget, getSVGFaviconUrl } from "@kinde/infrastructure";
 import "react";
-import { jsx, jsxs } from "react/jsx-runtime";
+import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server.browser";
-//#region kindeSrc/components/widget.tsx
+//#region kindeSrc/components/footer.tsx
 var styles$2 = {
+	container: {
+		textAlign: "center",
+		fontSize: "0.8rem",
+		color: "#E1E2EB",
+		fontFamily: "\"Plus Jakarta Sans\", sans-serif",
+		marginTop: "1rem"
+	},
+	links: {
+		display: "flex",
+		justifyContent: "center",
+		marginTop: "0.5rem",
+		gap: "0.5rem"
+	},
+	link: {
+		fontWeight: 500,
+		color: "inherit"
+	}
+};
+var Footer = () => {
+	return /* @__PURE__ */ jsxs("div", {
+		style: styles$2.container,
+		children: [/* @__PURE__ */ jsx("p", { children: "By continuing, you agree to our policies" }), /* @__PURE__ */ jsxs("div", {
+			style: styles$2.links,
+			children: [
+				/* @__PURE__ */ jsx("a", {
+					style: styles$2.link,
+					href: "https://docs.kinde.com/trust-center/privacy-and-compliance/privacy-policy/",
+					children: "Privacy Policy"
+				}),
+				"·",
+				/* @__PURE__ */ jsx("a", {
+					style: styles$2.link,
+					href: "#https://docs.kinde.com/trust-center/agreements/terms-of-service/",
+					children: "Terms of Service"
+				})
+			]
+		})]
+	});
+};
+//#endregion
+//#region kindeSrc/components/widget.tsx
+var styles$1 = {
 	article: {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
-		width: "90%",
-		minWidth: 0,
+		width: "100%",
+		minWidth: "300px",
 		boxSizing: "border-box",
 		padding: "1.5rem",
 		backgroundColor: "rgba(255, 255, 255, 0.05)",
 		backdropFilter: "blur(12px)",
 		WebkitBackdropFilter: "blur(12px)",
-		borderRadius: "0.5rem",
-		border: "1px solid rgba(255, 255, 255, 0.1)"
+		borderRadius: "0.5rem"
 	},
 	main: {
 		display: "flex",
@@ -29,7 +70,8 @@ var styles$2 = {
 		width: "100%",
 		minWidth: "2rem",
 		marginInline: "auto",
-		maxWidth: "400px"
+		maxWidth: "400px",
+		color: "E1E2EB"
 	},
 	heading: {
 		width: "100%",
@@ -39,6 +81,7 @@ var styles$2 = {
 		fontWeight: 400,
 		letterSpacing: "-0.02em",
 		marginBottom: "1.5rem",
+		marginTop: "1.5rem",
 		fontFamily: "Sora, sans-serif",
 		overflowWrap: "break-word",
 		wordBreak: "break-word"
@@ -53,67 +96,42 @@ var styles$2 = {
 		fontFamily: "\"Plus Jakarta Sans\", sans-serif",
 		overflowWrap: "break-word",
 		wordBreak: "break-word"
+	},
+	section: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
+		width: "100%",
+		backgroundColor: "rgba(0, 0, 0, 0.5)"
 	}
 };
 var Widget = ({ heading, description }) => {
-	return /* @__PURE__ */ jsx("article", {
-		style: styles$2.article,
-		children: /* @__PURE__ */ jsx("main", {
-			style: styles$2.main,
-			children: /* @__PURE__ */ jsxs("div", {
-				style: styles$2.container,
-				children: [
-					/* @__PURE__ */ jsx("h1", {
-						style: styles$2.heading,
-						children: heading
-					}),
-					/* @__PURE__ */ jsx("p", {
-						style: styles$2.description,
-						children: description
-					}),
-					getKindeWidget()
-				]
-			})
-		})
-	});
-};
-//#endregion
-//#region kindeSrc/components/footer.tsx
-var styles$1 = {
-	container: {
-		textAlign: "center",
-		marginTop: "1.5rem",
-		fontSize: "0.8rem",
-		padding: "2rem",
-		color: "#E1E2EB"
-	},
-	links: {
-		display: "flex",
-		justifyContent: "center",
-		marginTop: "0.5rem",
-		gap: "0.5rem"
-	},
-	link: { fontWeight: 500 }
-};
-var Footer = () => {
-	return /* @__PURE__ */ jsxs("div", {
-		style: styles$1.container,
-		children: [/* @__PURE__ */ jsx("p", { children: "By continuing, you agree to our policies" }), /* @__PURE__ */ jsxs("div", {
-			style: styles$1.links,
-			children: [
-				/* @__PURE__ */ jsx("a", {
-					style: styles$1.link,
-					href: "#",
-					children: "Privacy Policy"
-				}),
-				"·",
-				/* @__PURE__ */ jsx("a", {
-					style: styles$1.link,
-					href: "#",
-					children: "Terms of Service"
+	return /* @__PURE__ */ jsxs("section", {
+		style: styles$1.section,
+		children: [/* @__PURE__ */ jsx("article", {
+			style: styles$1.article,
+			children: /* @__PURE__ */ jsx("main", {
+				style: styles$1.main,
+				children: /* @__PURE__ */ jsxs("div", {
+					style: styles$1.container,
+					children: [
+						/* @__PURE__ */ jsx("h1", {
+							style: styles$1.heading,
+							children: heading
+						}),
+						/* @__PURE__ */ jsx("p", {
+							style: styles$1.description,
+							children: description
+						}),
+						/* @__PURE__ */ jsx("div", {
+							"theme-content": true,
+							children: getKindeWidget()
+						})
+					]
 				})
-			]
-		})]
+			})
+		}), /* @__PURE__ */ jsx(Footer, { "data-footer": true })]
 	});
 };
 //#endregion
@@ -121,32 +139,55 @@ var Footer = () => {
 var styles = {
 	section: {
 		display: "flex",
+		position: "fixed",
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		width: "100vw",
+		justifyContent: "center",
+		alignItems: "center",
+		paddingLeft: "0.5rem",
+		paddingRight: "0.5rem"
+	},
+	backgroundFixed: {
+		position: "absolute",
+		top: 0,
+		left: "50%",
+		transform: "translateX(-50%)",
 		width: "100%",
-		minHeight: "100vh",
-		backgroundImage: "url('https://lh3.googleusercontent.com/d/1STD7Vb1F2bW-yRoxLtzwjoHWbqJmvx_h')",
+		minWidth: "900px",
+		height: "100%",
+		backgroundImage: "url('https://lh3.googleusercontent.com/d/11OS3x7vFSp1rFAoNpUZ7lPKcn9XFxyM0')",
 		backgroundSize: "cover",
 		backgroundPosition: "center",
 		backgroundRepeat: "no-repeat",
-		overflowX: "hidden"
+		zIndex: -1
 	},
 	main: {
 		display: "flex",
+		position: "relative",
 		flexDirection: "column",
 		width: "100%",
-		minHeight: "100%",
+		height: "100%",
 		justifyContent: "space-between",
 		marginInline: "auto",
-		color: "#E1E2EB"
+		color: "#E1E2EB",
+		boxSizing: "border-box"
 	},
 	row: {
-		display: "grid",
-		gridTemplateColumns: "3fr 2fr",
+		display: "flex",
+		position: "relative",
+		flexDirection: "column",
 		justifyContent: "center",
-		alignItems: "center"
+		alignItems: "center",
+		width: "100%",
+		height: "100%"
 	},
 	imageWrapper: {
 		justifyContent: "center",
-		alignItems: "center"
+		alignItems: "center",
+		width: "100%"
 	},
 	image: {
 		width: "100%",
@@ -154,37 +195,44 @@ var styles = {
 	},
 	content: {
 		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		padding: "0 1.5rem",
-		margin: "2rem"
+		justifyContent: "start",
+		alignItems: "start",
+		minWidth: "300px",
+		maxWidth: "500px",
+		height: "100%",
+		boxSizing: "border-box",
+		overflowY: "auto",
+		scrollbarWidth: "none",
+		paddingTop: "5rem"
 	}
 };
-var DefaultLayout = ({ children }) => /* @__PURE__ */ jsx("section", {
-	style: styles.section,
-	children: /* @__PURE__ */ jsxs("main", {
-		"data-layout-main": true,
-		style: styles.main,
-		id: "main",
-		children: [/* @__PURE__ */ jsxs("div", {
-			"data-layout-row": true,
-			style: styles.row,
-			children: [/* @__PURE__ */ jsx("div", {
-				"data-layout-image-wrapper": true,
-				style: styles.imageWrapper,
-				children: /* @__PURE__ */ jsx("img", {
-					src: "https://lh3.googleusercontent.com/d/1A17sCx42_kMubJ4_S0AxlPTEefSBTxgV",
-					style: styles.image,
-					alt: "Icon"
-				})
-			}), /* @__PURE__ */ jsx("div", {
-				"data-layout-content": true,
-				style: styles.content,
-				children
-			})]
-		}), /* @__PURE__ */ jsx(Footer, {})]
-	})
-});
+var DefaultLayout = ({ children }) => {
+	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("section", {
+		style: styles.section,
+		children: [/* @__PURE__ */ jsx("div", { style: styles.backgroundFixed }), /* @__PURE__ */ jsx("main", {
+			"data-layout-main": true,
+			style: styles.main,
+			id: "main",
+			children: /* @__PURE__ */ jsxs("div", {
+				"data-layout-row": true,
+				style: styles.row,
+				children: [/* @__PURE__ */ jsx("div", {
+					"data-layout-image-wrapper": true,
+					style: styles.imageWrapper,
+					children: /* @__PURE__ */ jsx("img", {
+						src: "https://lh3.googleusercontent.com/d/19vhpFaGMNIDJnLrWxM56lHaHmpjJu-bu",
+						style: styles.image,
+						alt: "Icon"
+					})
+				}), /* @__PURE__ */ jsx("div", {
+					"data-layout-content": true,
+					style: styles.content,
+					children
+				})]
+			})
+		})]
+	}) });
+};
 //#endregion
 //#region kindeSrc/styles/styles.ts
 var getStyles = () => `@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
@@ -199,22 +247,25 @@ var getStyles = () => `@import url('https://fonts.googleapis.com/css2?family=Plu
       --kinde-button-secondary-background-color: #ffffff;
       --kinde-button-secondary-color: #0f172a;
       --kinde-button-secondary-border-radius: 14px;
+      --kinde-shared-color-text-label: #E1E2EB;
     }
-    [data-layout-row] { margin-top: 10rem; }
-    [data-layout-image-wrapper] { display: none; padding-top: 0; }
+    [data-kinde-root ] { margin: 0; padding: 0;}
+    [data-layout-image-wrapper] { display: none; padding-top: 0; display: none !important; }
+    [data-layout-content] { flex-shrink: 0; padding-top:10rem; overflow-y: auto; scrollbar-width: none; box-sizing: border-box; }
+    [theme-content] { font-family: var(--kinde-base-font-family); color: var(--kinde-base-color); font-size: 14px; line-height: 1.5; }
+    [data-footer] { font-family: var(--kinde-base-font-family); color: var(--kinde-shared-color-text-label); font-size: 14px; line-height: 1.5; }
+    [data-layout-content]::-webkit-scrollbar { display: none;}
     @media (min-width: 768px) {
       [data-layout-main] { max-width: 500px; }
-      [data-layout-image-wrapper] { display: flex; flex: 2; padding-top: 5rem; }
+      [data-layout-image-wrapper] { display: flex; flex: 2; display: flex !important;}
       [data-layout-row] { margin-top: 0; }
-      [data-layout-content] { width: 300px; box-sizing: border-box; }
+      [data-layout-content] { width: 300px; box-sizing: border-box; height: 100% !important; height: 100vh; flex-shrink: 0; padding-top:0rem; overflow-y: auto; scrollbar-width: none; }
+      [data-layout-row] { display: grid !important; grid-template-columns: 3fr 2fr !important; height: 100vh !important; }
     }
     @media (min-width: 1024px) {
       [data-layout-main] { max-width: 900px; }
-      [data-layout-content] { width: auto; }
-      [data-layout-row] { gap: 4rem; }
-      [data-layout-image-wrapper] { padding-top: 12.5rem; }
+      [data-layout-content] { width: auto;}
     }
-      
     `;
 //#endregion
 //#region kindeSrc/root.tsx

@@ -47,7 +47,8 @@ const styles: Record<string, React.CSSProperties> = {
     flexDirection: "column",   
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",  
+    width: "100%",
+    height: "100%",
   },
   imageWrapper: {
     justifyContent: "center",

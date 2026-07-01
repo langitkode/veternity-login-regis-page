@@ -61,6 +61,7 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   }
 };
 
