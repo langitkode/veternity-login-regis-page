@@ -77,7 +77,7 @@ const styles: Record<string, React.CSSProperties> = {
     scrollbarWidth: "none",   
     paddingLeft:"1rem",
     paddingRight:"1rem",
-    paddingTop:"20rem",
+    paddingTop:"10rem",
   },
 };
 
@@ -105,9 +105,10 @@ export const DefaultLayout = ({
             </div>
             <div data-layout-content style={styles.content}>
               {children}
+              <Footer data-footer />
             </div>
           </div>
-          <Footer data-footer />
+          
         </main>
       </section>
     </>
