@@ -26,7 +26,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   container: {
     width: "100%",
-    minWidth: "2rem",
+    minWidth: "300px",
     marginInline: "auto",
     maxWidth: "400px",
     color: "E1E2EB",
