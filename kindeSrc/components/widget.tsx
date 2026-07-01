@@ -13,6 +13,7 @@ const styles: Record<string, React.CSSProperties> = {
     minWidth: "300px",
     boxSizing: "border-box",
     padding: "1.5rem",
+    backgroundColor: "rgba(255, 255, 255, 0.05)",
     backdropFilter: "blur(12px)",
     WebkitBackdropFilter: "blur(12px)",
     borderRadius: "0.5rem",
@@ -60,7 +61,6 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
   }
 };
 
