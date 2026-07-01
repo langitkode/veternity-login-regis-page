@@ -13,8 +13,8 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100vw", 
     justifyContent: "center",
     alignItems: "center",
-    paddingLeft: "0.5rem",
-    paddingRight: "0.5rem",
+    paddingLeft: "10px",
+    paddingRight: "10px",
   },
   backgroundFixed: {
     position: "absolute",
