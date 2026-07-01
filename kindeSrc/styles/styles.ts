@@ -13,11 +13,9 @@ export const getStyles = (): string =>
       --kinde-button-secondary-border-radius: 14px;
       --kinde-shared-color-text-label: #E1E2EB;
       --kinde-choice-separator: #E1E2EB;
-      --kinde-control-select-text-variant: #a855f7;
     }
     [data-kinde-control-input] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-base-color) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-button-text] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-base-color) !important; font-size: 14px; line-height: 1.5; }
-    [data-kinde-control-label] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-control-select-text-variant  ) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-choice-separator] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-layout-widget-branding] { font-family: var(--kinde-base-font-family) !important; color: color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-root ] { margin: 0; padding: 0;}
