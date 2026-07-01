@@ -15,7 +15,6 @@ export const getStyles = (): string =>
       --kinde-choice-separator: #E1E2EB;
     }
     [data-kinde-control-input] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-base-color) !important; font-size: 14px; line-height: 1.5; }
-    [data-kinde-button-text] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-base-color) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-choice-separator] { font-family: var(--kinde-base-font-family) !important; color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-layout-widget-branding] { font-family: var(--kinde-base-font-family) !important; color: color: var(--kinde-choice-separator) !important; font-size: 14px; line-height: 1.5; }
     [data-kinde-root ] { margin: 0; padding: 0;}
