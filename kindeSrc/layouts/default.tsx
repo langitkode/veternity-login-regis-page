@@ -68,7 +68,7 @@ const styles: Record<string, React.CSSProperties> = {
   content: {
     display: "flex",
     justifyContent: "start",
-    alignItems: "center",  
+    alignItems: "start",  
     minWidth: "300px", 
     maxWidth: "500px",        
     height: "100%",    
@@ -105,10 +105,8 @@ export const DefaultLayout = ({
             </div>
             <div data-layout-content style={styles.content}>
               {children}
-              <Footer data-footer />
             </div>
           </div>
-          
         </main>
       </section>
     </>

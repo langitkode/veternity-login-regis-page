@@ -6,7 +6,6 @@ const styles: Record<string, React.CSSProperties> = {
   container: {
     textAlign: "center",
     fontSize: "0.8rem",
-    padding: "2rem",
     color: "#E1E2EB",
     fontFamily: '"Plus Jakarta Sans", sans-serif',
   },

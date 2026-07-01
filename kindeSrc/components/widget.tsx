@@ -2,6 +2,7 @@
 
 import { getKindeWidget } from "@kinde/infrastructure";
 import React from "react";
+import { Footer } from "./footer";
 
 const styles: Record<string, React.CSSProperties> = {
   article: {
@@ -54,6 +55,13 @@ const styles: Record<string, React.CSSProperties> = {
     overflowWrap: "break-word",
     wordBreak: "break-word",
   },
+  section: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+  }
 };
 
 type WidgetProps = {
@@ -63,14 +71,17 @@ type WidgetProps = {
 
 export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
   return (
-    <article style={styles.article}>
-      <main style={styles.main}>
-        <div style={styles.container}>
-          <h1 style={styles.heading}>{heading}</h1>
-          <p style={styles.description}>{description}</p>
-          <div theme-content>{getKindeWidget()}</div>
-        </div>
-      </main>
-    </article>
+    <section style={styles.section}>
+      <article style={styles.article}>
+        <main style={styles.main}>
+          <div style={styles.container}>
+            <h1 style={styles.heading}>{heading}</h1>
+            <p style={styles.description}>{description}</p>
+            <div theme-content>{getKindeWidget()}</div>
+          </div>
+        </main>
+      </article>
+      <Footer data-footer />
+    </section>
   );
 };
