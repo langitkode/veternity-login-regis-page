@@ -52,7 +52,7 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    height: "100%",
+    height: "100vh",
     flex: 1,
     overflow: "hidden",         /* Kunci baris agar tidak bocor di HP */
   },
@@ -67,7 +67,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   content: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "start",
     alignItems: "center",  
     minWidth: "300px", 
     maxWidth: "500px",        
