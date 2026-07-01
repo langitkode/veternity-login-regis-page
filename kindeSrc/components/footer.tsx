@@ -8,7 +8,8 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: "0.8rem",
     color: "#E1E2EB",
     fontFamily: '"Plus Jakarta Sans", sans-serif',
-    marginTop: "1rem"
+    marginTop: "1rem",
+    marginBottom: "3rem"
   },
   links: {
     display: "flex",
