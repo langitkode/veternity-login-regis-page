@@ -13,7 +13,6 @@ export const getStyles = (): string =>
       --kinde-button-secondary-border-radius: 14px;
       --kinde-shared-color-text-label: #E1E2EB;
     }
-    [data-layout-row] { margin-top: 5rem; }
     [data-layout-image-wrapper] { display: none; padding-top: 0; display: none !important; }
     [data-layout-content] { margin-top: 10rem; height: calc(100vh - 4rem) !important; max-height: calc(100vh - 4rem);}
     [theme-content] { font-family: var(--kinde-base-font-family); color: var(--kinde-base-color); font-size: 14px; line-height: 1.5; }
