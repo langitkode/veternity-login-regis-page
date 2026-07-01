@@ -9,7 +9,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "300px",
+    width: "315px",
     minWidth: "100%",
     boxSizing: "border-box",
     padding: "1.5rem",
