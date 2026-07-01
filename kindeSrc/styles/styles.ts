@@ -3,18 +3,19 @@ export const getStyles = (): string =>
     :root {
       --kinde-heading-font-family: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --kinde-base-font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --kinde-base-color: #ffffff;
+      --kinde-base-color: #E1E2EB;
       --kinde-button-primary-background-color: #a855f7; 
-      --kinde-button-primary-color: #ffffff;
+      --kinde-button-primary-color: #E1E2EB;
       --kinde-button-primary-border-radius: 14px;
       --kinde-button-primary-font-weight: 600;
-      --kinde-button-secondary-background-color: #ffffff;
+      --kinde-button-secondary-background-color: #E1E2EB;
       --kinde-button-secondary-color: #0f172a;
       --kinde-button-secondary-border-radius: 14px;
       --kinde-shared-color-text-label: #E1E2EB;
       --kinde-choice-separator: #E1E2EB;
     }
-    [data-kinde-layout-widget-branding]: { font-family: var(--kinde-base-font-family); color: var(--kinde-base-color); font-size: 14px; line-height: 1.5; }
+    [data-kinde-choice-separator]: { font-family: var(--kinde-base-font-family); color: var(--kinde-choice-separator); font-size: 14px; line-height: 1.5; }
+    [data-kinde-layout-widget-branding]: { font-family: var(--kinde-base-font-family); color: color: var(--kinde-choice-separator); font-size: 14px; line-height: 1.5; }
     [data-kinde-root ] { margin: 0; padding: 0;}
     [data-layout-image-wrapper] { display: none; padding-top: 0; display: none !important; }
     [data-layout-content] { flex-shrink: 0; padding-top:10rem; overflow-y: auto; scrollbar-width: none; box-sizing: border-box; }
