@@ -23,7 +23,7 @@ export const getStyles = (): string =>
       [data-layout-main] { max-width: 500px; }
       [data-layout-image-wrapper] { display: flex; flex: 2; display: flex !important;}
       [data-layout-row] { margin-top: 0; }
-      [data-layout-content] { width: 300px; box-sizing: border-box; height: 100% !important; height: 100vh; flex-shrink: 0; padding-top:0rem; }
+      [data-layout-content] { width: 300px; box-sizing: border-box; height: 100% !important; height: 100vh; flex-shrink: 0; padding-top:0rem; overflow-y: auto; scrollbar-width: none; }
       [data-layout-row] { display: grid !important; grid-template-columns: 3fr 2fr !important; height: 100vh !important; }
     }
     @media (min-width: 1024px) {

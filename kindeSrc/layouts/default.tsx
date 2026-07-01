@@ -68,7 +68,7 @@ const styles: Record<string, React.CSSProperties> = {
     boxSizing: "border-box",
     overflowY: "auto",             
     scrollbarWidth: "none",   
-    paddingTop:"10rem",
+    paddingTop:"5rem",
   },
 };
 
